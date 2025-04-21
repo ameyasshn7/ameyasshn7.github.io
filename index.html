@@ -4,135 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ameyassh Nagarajan - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            text-align: center;
-            background-color: #444;
-            padding: 10px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 10px;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .project {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Particles.js container for background effect -->
+    <div id="particles-js"></div>
+
     <header>
-        <h1>hi this is AMEYASSH</h1>
-        <p>Software Developement | Machine Learning | Data Science </p>
+        <div class="header-content">
+            <h1>Ameyassh Nagarajan</h1>
     </header>
 
     <nav>
         <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#publications">Research</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="container">
         <section id="about">
-            <h2>hi This is Ameyassh</h2>
-            <p>Hello and Welcome to my page!</p>
-            <p>I am Ameyassh Nagarajan, currently pursuing a Master's in Computer Science at Oregon State University. 
-                My educational foundation includes a Bachelor's Degree in Information Technology from the University of Mumbai. 
-                My passion lies in creative innovation and continuous learning, particularly in the realm of Machine Learning, 
-                which I both build and teach proficiently. My academic journey has provided the privilege of collaborating with 
-                talented peers, enriching my skill set and laying a solid foundation for my professional endeavors. 
-                Through diverse experiences and projects, I have acquired invaluable skills that will undoubtedly propel my career 
-                forward.</p>
+            
+            <h2>About Me</h2>
+            <p>
+                I am a PhD student at Oregon State University, advised by
+                <a href="https://cropandsoil.oregonstate.edu/users/jing-zhou" target="_blank">Dr. Jing Zhou</a>,
+                where my research centers on advancing Computer Vision (CV) and edge computing for agricultural applications.
+              </p>
+            
+              <h3>Research Focus</h3>
+              <p>
+                My primary research lies at the intersection of computer vision and precision agriculture. I am currently developing systems that automate the detection of off-type seeds—a task traditionally dependent on intensive human labor. By leveraging state-of-the-art deep learning models, my work aims to improve both the accuracy and efficiency of seed sorting. To make these solutions accessible and scalable, I utilize affordable edge computing platforms such as Raspberry Pi and NVIDIA Jetson boards as user interfaces and on-site processing units.
+              </p>
+              <p>
+                In addition to seed detection, I am exploring robust, off-grid systems capable of running computer vision algorithms in remote agricultural environments where connectivity is limited. This approach enables real-time data processing and decision-making directly on the farm, which is critical for timely interventions in crop management and resource optimization.
+              </p>
+            
+              <h3>Broader Interests</h3>
+              <p>
+                Beyond my core research, I am deeply interested in algorithms and theoretical computer science. I actively seek opportunities to expand my knowledge in these areas, recognizing their foundational role in advancing AI and CV technologies.
+              </p>
+            
+              <h3>Outside the Lab</h3>
+              <p>
+                When I am not immersed in research, I enjoy making music and spending time outdoors. My music spans various genres—often experimental and always focused on having fun. If you’re curious, you can listen to my work on my
+                <a href="https://soundcloud.com/amehmusic" target="_blank">SoundCloud page</a>.
+              </p>
         </section>
 
-        
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Research Assistant</h3>
+                <p class="subtitle">Oregon State University | Corvallis, OR</p>
+                <p class="date">May 2024 – Present</p>
+                <ul>
+                    <li>Developed cross-platform software on Raspberry Pi 4B and Pi 5 to deliver low-cost computer vision solutions for agricultural applications.</li>
+                    <li>Utilized contour matching and object detection for detecting duplicate seeds, enhancing seed sorting and quality assurance processes.</li>
+                    <li>Leveraged Point Cloud to develop 3D models for grass volume estimation and depth information retrieval.</li>
+                    <li>Authored real-time image stitching algorithms optimized for on-site farm environments.</li>
+                    <li>Designed a user-friendly website for researchers to test and evaluate these techniques.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Machine Learning Instructor</h3>
+                <p class="subtitle">iD Tech Camps, University of Washington | Seattle, WA</p>
+                <p class="date">June 2023 – August 2023</p>
+                <ul>
+                    <li>Delivered comprehensive instruction in Python programming and machine learning concepts using TensorFlow.</li>
+                    <li>Designed and refined course materials for diverse skill levels of students.</li>
+                    <li>Contributed to curriculum development by identifying gaps in existing content.</li>
+                    <li>Received positive feedback for effectively simplifying advanced machine learning topics.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Undergraduate Research Assistant</h3>
+                <p class="subtitle">SIES Graduate School of Technology | Mumbai, India</p>
+                <p class="date">June 2021 – March 2022</p>
+                <ul>
+                    <li>Conducted research in Natural Language Processing (NLP) focusing on applications in gaming.</li>
+                    <li>Designed a draft recommendation system for DOTA2, conceptualizing the drafting phase as a sentence completion problem.</li>
+                    <li>Developed models using CBOW and LSTM networks, improving recommendation accuracy.</li>
+                    <li>Presented findings at the 2022 International Conference on Trends in Electronics and Informatics.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Data Science Intern</h3>
+                <p class="subtitle">TATA Memorial Centre | Mumbai, India</p>
+                <p class="date">June 2021 – July 2021</p>
+                <ul>
+                    <li>Created an automated feature selection algorithm for large datasets improving processing speed.</li>
+                    <li>Engineered an algorithm processing multiple datasets for cancer research.</li>
+                    <li>Employed Python libraries for data manipulation and machine learning tasks.</li>
+                </ul>
+            </div>
+        </section>
+
+         <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Oregon State University</h3>
+                <p class="subtitle">Masters & PhD in Computer Science and Crop Science | GPA: 3.90</p>
+                <p class="date">September 2022 – December 2027 (Expected)</p>
+                <p>Developing and researching low-cost edge computing and cloud computing technologies to develop computer vision solutions for Seed Identification for farmers and Slug detection in farms.</p>
+                <p><strong>Relevant Coursework:</strong> Artificial Intelligence, Algorithms and Data Structures, Deep Learning, Natural Language Processing.</p>
+            </div>
+            <div class="education-item">
+                <h3>University of Mumbai</h3>
+                <p class="subtitle">Bachelor of Engineering in Information Technology | CGPA: 8.16/10</p>
+                <p class="date">June 2018 – May 2022</p>
+                <p>Specialized in Computer Vision and Natural Language Processing, with a focus on developing innovative solutions and applications in these domains.</p>
+                <p><strong>Relevant Coursework:</strong> Database Management Systems, Internet Programming, Operating Systems, Software Engineering.</p>
+            </div>
+        </section>
 
         <section id="projects">
             <h2>Projects</h2>
+            <p> This section includes some cool projects I have worked on over the past few years and the github repositiory for these projects.</p>
+
             <div class="project">
-                <h3><a href="https://github.com/ameyasshn7/Dota-2-Draft-Recommendation-System">Dota 2 Draft Recommendation System</a></h3>
-                <p>The Dota 2 Draft Recommendation System employs machine learning to suggest three suitable heroes 
-                    for the last pick during the drafting phase of the game. 
-                    It considers the user's draft, the opponent's draft, and banned heroes. 
-                    Data is acquired from OpenDota and preprocessed, 
-                    leading to the training of deep learning models like CBOW and LSTM. 
-                    A web application facilitates the drafting process. 
-                    The model provides commendable accuracy, although 'Mid' heroes are often suggested as last picks. 
-                    The system adapts to Dota 2's ever-changing patches and offers valuable assistance to players in making 
-                    informed hero selections, enhancing gameplay and strategy development.</p>
+                <h3><a href="#" target="_blank">RNA Design Solver</a></h3>
+                <p class="tech-stack">Python, JavaScript, HTML, CSS</p>
+                <p class="date">March 2024 - June 2024</p>
+                <ul>
+                    <li>Developed a web application to address the RNA Design problem, essential for genetic research.</li>
+                    <li>Converted the NP-hard RNA Design problem into a SAT problem using PySat, improving efficiency and accuracy.</li>
+                    <li>Implemented a verification system to ensure solution correctness, enhancing reliability.</li>
+                </ul>
             </div>
             <div class="project">
-                <h3><a href= "https://github.com/ameyasshn7/DQN-breakout">emAI_L</a></h3>
-                <p>Building an agent that learns from high-dimensional
-                    sensory inputs is one of the challenges of Reinforcement
-                    Learning. Most agents operate on data that has been handlabelled, implying that the performance of these agents
-                    relies on the quality of the labelled data. This project draws
-                    inspiration from the researchers at DeepMind
-                    Technologies to build a Deep Learning (DL) Agent that
-                    specializes in playing the game of ATARI Breakout, where
-                    the data for the agent is the environment of the game itself.</p>
+                <h3><a href="https://github.com/ameyasshn7/Diabetic-Retinopathy-Detection" target="_blank">Diabetic Retinopathy Detection</a></h3>
+                <p class="tech-stack">Python, TensorFlow, Pandas</p>
+                <p class="date">January 2022 - June 2022</p>
+                <ul>
+                    <li>Utilized DenseNet-121 to analyze a 9.52GB retinal image dataset for blindness detection, achieving 72.3% accuracy.</li>
+                    <li>Leveraged data augmentation and advanced neural network architectures to enhance model performance.</li>
+                </ul>
             </div>
-            <div class = "project">
-                <h3><a href = "https://github.com/ameyasshn7/Diabetic-Retinopathy-Detection">Diabetic Retinopathy Detection</a></h3>
-                <p>Diabetic retinopathy, a diabetes-induced eye condition, 
-                    can lead to blindness if not detected early. 
-                    Python's image processing capabilities enable automated analysis of retinal images, 
-                    identifying signs like microaneurysms. 
-                    Early diagnosis aids timely intervention, preventing vision loss. 
-                    Python's efficiency with large datasets makes it invaluable in managing diabetic retinopathy at scale, \
-                    improving patient outcomes, and easing healthcare systems. 
-                    The repository houses a deep learning project for classifying retinal images into five classes, 
-                    using DenseNet121 as the model. It includes data preprocessing, augmentation, training, evaluation, 
-                    and test prediction. The model achieves a 72.73% accuracy, showcasing its diagnostic potential. 
-                    Data source: Kaggle Diabetic Retinopathy Detection Dataset.</p>
+            <div class="project">
+                <h3><a href="https://github.com/ameyasshn7/Dota-2-Draft-Recommendation-System" target="_blank">DOTA 2 Draft Recommendation System</a></h3>
+                <p class="tech-stack">Python, Streamlit, Pandas, NumPy</p>
+                <p class="date">June 2020 – January 2022</p>
+                <ul>
+                    <li>Built an intelligent recommendation system for DotA2, utilizing NLP techniques to optimize hero selection.</li>
+                    <li>Managed the project lifecycle, including data engineering, machine learning model design, and web app deployment.</li>
+                    <li>Leveraged Python, Streamlit, and advanced NLP techniques to create an intuitive recommendation system, enhancing game strategy outcomes by 15%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Research</h2>
+            <div class="publication">
+                <p>Our Abstract titled "IDENTIFYING GRASS SEEDS USING LOW COST HARDWARE AND MACHINE LEARNING" has been accepted to the American Society of Agricultural and Biological Engineers  <a href="https://asabe.org/">(ASABE)</a> AIM 2025, which will be held in Toronto in July 2025.</p>
+                <p>Y. Mohammed, S. Srinivasan, S. Iyer, and A. Nagarajan, "Defense of the Ancients (DOTA 2)-Draft Recommendation System," 2022 6th International Conference on Trends in Electronics and Informatics (ICOEI), Tirunelveli, India, 2022, pp. 13-17, doi: 10.1109/ICOEI53556.2022.9776822.</p>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: ameyasshn7@gmail.com</p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/ameyasshn7">LinkedIn</a></p>
-            <p>GitHub: <a href="https://github.com/ameyasshn7">Github</a></p>
+            <div class="contact-info">
+                <p>Phone: 424-356-4713</p>
+                <p>Email: ameyasshn7@gmail.com</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/ameyasshn7" target="_blank">linkedin.com/in/ameyasshn7</a></p>
+                <p>GitHub: <a href="https://github.com/ameyasshn7" target="_blank">github.com/ameyasshn7</a></p>
+            </div>
         </section>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Ameyassh Nagarajan. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
