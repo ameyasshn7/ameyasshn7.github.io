@@ -1,185 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ameyassh Nagarajan - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ameyassh Nagarajan</title>
+  <meta name="description" content="Ameyassh Nagarajan, Ph.D. student in Artificial Intelligence and Crop Science at Oregon State University. Low-cost, edge-deployable computer vision for crop monitoring and pest management.">
+  <meta property="og:title" content="Ameyassh Nagarajan">
+  <meta property="og:description" content="Ph.D. student in Artificial Intelligence and Crop Science at Oregon State University.">
+  <meta property="og:image" content="https://ameyasshn7.github.io/assets/img/headshot.jpg">
+  <meta property="og:url" content="https://ameyasshn7.github.io/">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Particles.js container for background effect -->
-    <div id="particles-js"></div>
 
-    <header>
-        <div class="header-content">
-            <h1>Ameyassh Nagarajan</h1>
+  <nav class="topnav" aria-label="Sections">
+    <div class="wrap topnav-inner">
+      <a class="brand" href="#top">Ameyassh Nagarajan</a>
+      <div class="topnav-links">
+        <a href="#research">Research</a>
+        <a class="wide-only" href="#publications">Publications</a>
+        <a href="#gallery">Gallery</a>
+        <a class="wide-only" href="#experience">Experience</a>
+        <a href="files/Ameyassh_Nagarajan_Resume.pdf">CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap" id="top">
+
+    <!-- ============ INTRO ============ -->
+    <header class="intro">
+      <div class="intro-text">
+        <h1>Ameyassh Nagarajan</h1>
+        <p class="role">Ph.D. Student, Artificial Intelligence &amp; Crop Science<br>Oregon State University, Corvallis, OR</p>
+
+        <p>
+          I'm a Ph.D. student at Oregon State University, advised by
+          <a href="https://cropandsoil.oregonstate.edu/users/jing-zhou">Dr. Jing Zhou</a> and
+          <a href="https://web.engr.oregonstate.edu/~lif/">Dr. Fuxin Li</a>.
+          I build low-cost computer vision systems that run on edge devices like the Raspberry Pi and NVIDIA Jetson,
+          and I take them out to farms to monitor crops and pests in places where power and connectivity are limited.
+        </p>
+        <p>
+          Right now that means a network of field cameras watching for slugs in Willamette Valley grass seed fields,
+          a camera system that helps seed analysts identify grass seed species, and a multimodal sensor suite
+          (RGB, NIR, thermal and point hyperspectral) for detecting plant stress.
+        </p>
+
+        <ul class="links">
+          <li><a href="mailto:ameyass@oregonstate.edu">Email</a></li>
+          <li><a href="files/Ameyassh_Nagarajan_Resume.pdf">CV (PDF)</a></li>
+          <li><a href="https://github.com/ameyasshn7">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/ameyasshn7/">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <!-- Replace assets/img/headshot.jpg with your photo (portrait, about 4:5) -->
+      <img class="headshot" src="assets/img/headshot.jpg" alt="Ameyassh Nagarajan" width="1000" height="1250">
     </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Research</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <p class="interests">
+      <span class="label">Research interests</span>
+      <span>Computer vision &amp; perception</span> · <span>Multimodal learning &amp; sensor fusion</span> · <span>Multimodal remote sensing</span> · <span>Edge AI &amp; real-time inference</span> · <span>Object detection</span> · <span>IoT</span> · <span>Camera systems</span> · <span>Precision agriculture</span>
+    </p>
 
-    <div class="container">
-        <section id="about">
-            
-            <h2>About Me</h2>
-            <p>
-                I am a PhD student at Oregon State University, advised by
-                <a href="https://cropandsoil.oregonstate.edu/users/jing-zhou" target="_blank">Dr. Jing Zhou</a>,
-                where my research centers on advancing Computer Vision (CV) and edge computing for agricultural applications.
-              </p>
-            
-              <h3>Research Focus</h3>
-              <p>
-                My primary research lies at the intersection of computer vision and precision agriculture. I am currently developing systems that automate the detection of off-type seeds—a task traditionally dependent on intensive human labor. By leveraging state-of-the-art deep learning models, my work aims to improve both the accuracy and efficiency of seed sorting. To make these solutions accessible and scalable, I utilize affordable edge computing platforms such as Raspberry Pi and NVIDIA Jetson boards as user interfaces and on-site processing units.
-              </p>
-              <p>
-                In addition to seed detection, I am exploring robust, off-grid systems capable of running computer vision algorithms in remote agricultural environments where connectivity is limited. This approach enables real-time data processing and decision-making directly on the farm, which is critical for timely interventions in crop management and resource optimization.
-              </p>
-            
-              <h3>Broader Interests</h3>
-              <p>
-                Beyond my core research, I am deeply interested in algorithms and theoretical computer science. I actively seek opportunities to expand my knowledge in these areas, recognizing their foundational role in advancing AI and CV technologies.
-              </p>
-            
-              <h3>Outside the Lab</h3>
-              <p>
-                When I am not immersed in research, I enjoy making music and spending time outdoors. My music spans various genres—often experimental and always focused on having fun. If you’re curious, you can listen to my work on my
-                <a href="https://soundcloud.com/amehmusic" target="_blank">SoundCloud page</a>.
-              </p>
-        </section>
+    <!-- ============ NEWS ============ -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="dated">
+        <li><span class="date">Apr 2026</span><span>Invited talk and live demo at the Oregon Seed Association Grass Workshop, Salem, OR.</span></li>
+        <li><span class="date">Jan 2026</span><span>Invited talk on seed species identification at the Oregon Seed Association Mid-Winter Meeting, Lebanon, OR.</span></li>
+        <li><span class="date">Jul 2025</span><span>Oral presentation at the ASABE Annual International Meeting in Toronto.</span></li>
+        <li><span class="date">2025</span><span>Received the Kent Wiley Memorial Scholarship from the Oregon Seed Association.</span></li>
+        <li><span class="date">Feb 2025</span><span>Our seed identification work was featured in <a href="https://capitalpress.com/2025/02/21/delegating-grass-seed-scrutiny-to-computers/">Capital Press</a>.</span></li>
+        <li><span class="date">Jan 2025</span><span>Featured by the <a href="https://science.oregonstate.edu/impact/2025/01/helping-oregon-farmers-thrive-with-smarter-seed-testing-solutions">OSU College of Science</a>.</span></li>
+      </ul>
+    </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Research Assistant</h3>
-                <p class="subtitle">Oregon State University | Corvallis, OR</p>
-                <p class="date">May 2024 – Present</p>
-                <ul>
-                    <li>Developed cross-platform software on Raspberry Pi 4B and Pi 5 to deliver low-cost computer vision solutions for agricultural applications.</li>
-                    <li>Utilized contour matching and object detection for detecting duplicate seeds, enhancing seed sorting and quality assurance processes.</li>
-                    <li>Leveraged Point Cloud to develop 3D models for grass volume estimation and depth information retrieval.</li>
-                    <li>Authored real-time image stitching algorithms optimized for on-site farm environments.</li>
-                    <li>Designed a user-friendly website for researchers to test and evaluate these techniques.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Machine Learning Instructor</h3>
-                <p class="subtitle">iD Tech Camps, University of Washington | Seattle, WA</p>
-                <p class="date">June 2023 – August 2023</p>
-                <ul>
-                    <li>Delivered comprehensive instruction in Python programming and machine learning concepts using TensorFlow.</li>
-                    <li>Designed and refined course materials for diverse skill levels of students.</li>
-                    <li>Contributed to curriculum development by identifying gaps in existing content.</li>
-                    <li>Received positive feedback for effectively simplifying advanced machine learning topics.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Undergraduate Research Assistant</h3>
-                <p class="subtitle">SIES Graduate School of Technology | Mumbai, India</p>
-                <p class="date">June 2021 – March 2022</p>
-                <ul>
-                    <li>Conducted research in Natural Language Processing (NLP) focusing on applications in gaming.</li>
-                    <li>Designed a draft recommendation system for DOTA2, conceptualizing the drafting phase as a sentence completion problem.</li>
-                    <li>Developed models using CBOW and LSTM networks, improving recommendation accuracy.</li>
-                    <li>Presented findings at the 2022 International Conference on Trends in Electronics and Informatics.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Data Science Intern</h3>
-                <p class="subtitle">TATA Memorial Centre | Mumbai, India</p>
-                <p class="date">June 2021 – July 2021</p>
-                <ul>
-                    <li>Created an automated feature selection algorithm for large datasets improving processing speed.</li>
-                    <li>Engineered an algorithm processing multiple datasets for cancer research.</li>
-                    <li>Employed Python libraries for data manipulation and machine learning tasks.</li>
-                </ul>
-            </div>
-        </section>
+    <!-- ============ RESEARCH ============ -->
+    <section id="research">
+      <h2>Research</h2>
 
-         <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Oregon State University</h3>
-                <p class="subtitle">Masters & PhD in Computer Science and Crop Science | GPA: 3.90</p>
-                <p class="date">September 2022 – December 2027 (Expected)</p>
-                <p>Developing and researching low-cost edge computing and cloud computing technologies to develop computer vision solutions for Seed Identification for farmers and Slug detection in farms.</p>
-                <p><strong>Relevant Coursework:</strong> Artificial Intelligence, Algorithms and Data Structures, Deep Learning, Natural Language Processing.</p>
-            </div>
-            <div class="education-item">
-                <h3>University of Mumbai</h3>
-                <p class="subtitle">Bachelor of Engineering in Information Technology | CGPA: 8.16/10</p>
-                <p class="date">June 2018 – May 2022</p>
-                <p>Specialized in Computer Vision and Natural Language Processing, with a focus on developing innovative solutions and applications in these domains.</p>
-                <p><strong>Relevant Coursework:</strong> Database Management Systems, Internet Programming, Operating Systems, Software Engineering.</p>
-            </div>
-        </section>
+      <article class="project">
+        <img src="assets/img/research-slug.jpg" alt="Slug monitoring camera nodes in a grass seed field" loading="lazy" width="1200" height="900">
+        <div>
+          <h3>Slug monitoring in grass seed fields</h3>
+          <p>
+            48 semi-autonomous camera systems and 12 weather monitoring units built on Raspberry Pi 4, ESP32 and
+            Pi Camera NoIR modules, with a one-week battery life, deployed in Willamette Valley grass seed fields.
+            An optical-flow-based network detects slug movement, and I pair its predictions with the weather data
+            to understand what drives slug emergence.
+          </p>
+        </div>
+      </article>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p> This section includes some cool projects I have worked on over the past few years and the github repositiory for these projects.</p>
+      <article class="project">
+        <img src="assets/img/research-seed.jpg" alt="Early prototype of the seed classification system, 2025" loading="lazy" width="1600" height="1200">
+        <div>
+          <h3>Grass seed species identification</h3>
+          <p>
+            A camera system that helps seed analysts identify grass seed species, with custom camera software for
+            Raspberry Pi and NVIDIA Jetson Orin Nano, a tuned image acquisition pipeline and server-side inference.
+            I benchmarked several cameras using libcamera, GStreamer and GenICam. The project was recognized by the
+            Oregon Seed Association.
+          </p>
+        </div>
+      </article>
 
-            <div class="project">
-                <h3><a href="#" target="_blank">RNA Design Solver</a></h3>
-                <p class="tech-stack">Python, JavaScript, HTML, CSS</p>
-                <p class="date">March 2024 - June 2024</p>
-                <ul>
-                    <li>Developed a web application to address the RNA Design problem, essential for genetic research.</li>
-                    <li>Converted the NP-hard RNA Design problem into a SAT problem using PySat, improving efficiency and accuracy.</li>
-                    <li>Implemented a verification system to ensure solution correctness, enhancing reliability.</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3><a href="https://github.com/ameyasshn7/Diabetic-Retinopathy-Detection" target="_blank">Diabetic Retinopathy Detection</a></h3>
-                <p class="tech-stack">Python, TensorFlow, Pandas</p>
-                <p class="date">January 2022 - June 2022</p>
-                <ul>
-                    <li>Utilized DenseNet-121 to analyze a 9.52GB retinal image dataset for blindness detection, achieving 72.3% accuracy.</li>
-                    <li>Leveraged data augmentation and advanced neural network architectures to enhance model performance.</li>
-                </ul>
-            </div>
-            <div class="project">
-                <h3><a href="https://github.com/ameyasshn7/Dota-2-Draft-Recommendation-System" target="_blank">DOTA 2 Draft Recommendation System</a></h3>
-                <p class="tech-stack">Python, Streamlit, Pandas, NumPy</p>
-                <p class="date">June 2020 – January 2022</p>
-                <ul>
-                    <li>Built an intelligent recommendation system for DotA2, utilizing NLP techniques to optimize hero selection.</li>
-                    <li>Managed the project lifecycle, including data engineering, machine learning model design, and web app deployment.</li>
-                    <li>Leveraged Python, Streamlit, and advanced NLP techniques to create an intuitive recommendation system, enhancing game strategy outcomes by 15%.</li>
-                </ul>
-            </div>
-        </section>
+      <article class="project">
+        <img src="assets/img/research-dirt.jpg" alt="Rendering of the DIRT multimodal sensor unit" loading="lazy" width="388" height="290">
+        <div>
+          <h3>DIRT: Data-driven Inference of Rootzone and Terrain</h3>
+          <p>
+            With the OPEnS Lab (Dr. John Selker), funded and supported by Stevens Water. A sensor suite combining
+            RGB, NIR, LWIR and point hyperspectral sensors, a transformer-based multimodal model that detects
+            multiple stressors on a golf course, and a method to reduce infrared leakage in RGB sensors.
+          </p>
+        </div>
+      </article>
 
-        <section id="publications">
-            <h2>Research</h2>
-            <div class="publication">
-                <p>Our Abstract titled "IDENTIFYING GRASS SEEDS USING LOW COST HARDWARE AND MACHINE LEARNING" has been accepted to the American Society of Agricultural and Biological Engineers  <a href="https://asabe.org/">(ASABE)</a> AIM 2025, which will be held in Toronto in July 2025.</p>
-                <p>Y. Mohammed, S. Srinivasan, S. Iyer, and A. Nagarajan, "Defense of the Ancients (DOTA 2)-Draft Recommendation System," 2022 6th International Conference on Trends in Electronics and Informatics (ICOEI), Tirunelveli, India, 2022, pp. 13-17, doi: 10.1109/ICOEI53556.2022.9776822.</p>
-            </div>
-        </section>
+      <article class="project no-img">
+        <div>
+          <h3>Grady Sensor web application</h3>
+          <p>
+            A full-stack web app (Node.js, React, Stripe) for the
+            <a href="https://digiseedtech.com/">Grady Sensor</a> grass-seed moisture monitoring system,
+            supporting technology transfer and commercial deployment.
+          </p>
+        </div>
+      </article>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p>Phone: 424-356-4713</p>
-                <p>Email: ameyasshn7@gmail.com</p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/ameyasshn7" target="_blank">linkedin.com/in/ameyasshn7</a></p>
-                <p>GitHub: <a href="https://github.com/ameyasshn7" target="_blank">github.com/ameyasshn7</a></p>
-            </div>
-        </section>
+    <!-- ============ PUBLICATIONS & TALKS ============ -->
+    <section id="publications">
+      <h2>Publications &amp; Talks</h2>
+
+      <h3 class="sub">Publications</h3>
+      <ul class="refs">
+        <li>
+          Y. Mohammed, S. Srinivasan, S. Iyer, and <strong>A. Nagarajan</strong>.
+          <a href="https://ieeexplore.ieee.org/document/9776822">Defense of the Ancients (DOTA 2)-Draft Recommendation System</a>.
+          <em>2022 6th International Conference on Trends in Electronics and Informatics (ICOEI)</em>, pp. 13–17, 2022.
+          <a class="tag" href="https://doi.org/10.1109/ICOEI53556.2022.9776822">DOI</a>
+        </li>
+      </ul>
+
+      <h3 class="sub">Talks</h3>
+      <ul class="dated">
+        <li><span class="date">Apr 2026</span><span>Invited speaker, Oregon Seed Association Grass Workshop, Salem, OR. Presented advances to the seed identification system and led a live demonstration.</span></li>
+        <li><span class="date">Jan 2026</span><span>Invited speaker, Oregon Seed Association Mid-Winter Meeting, Lebanon, OR. Seed species identification using computer vision.</span></li>
+        <li><span class="date">Jul 2025</span><span>Oral presentation, ASABE Annual International Meeting, Toronto, Canada. <em>Digitalizing Seed Purity Testing: Identifying Species of Seeds using Low-cost Computer Vision and Artificial Intelligence System.</em></span></li>
+      </ul>
+
+      <h3 class="sub">Press</h3>
+      <ul class="dated">
+        <li><span class="date">Feb 2025</span><span>Capital Press, <a href="https://capitalpress.com/2025/02/21/delegating-grass-seed-scrutiny-to-computers/">Delegating grass seed scrutiny to computers</a></span></li>
+        <li><span class="date">Jan 2025</span><span>OSU College of Science, <a href="https://science.oregonstate.edu/impact/2025/01/helping-oregon-farmers-thrive-with-smarter-seed-testing-solutions">Helping Oregon farmers thrive with smarter seed testing solutions</a></span></li>
+      </ul>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <!-- To change a photo: replace the file in assets/img/ (same name) and edit the caption text below. -->
+    <section id="gallery">
+      <div class="section-head">
+        <h2>Gallery</h2>
+        <button type="button" class="slideshow-btn" id="slideshow-btn">▶&#xFE0E; Play slideshow</button>
+      </div>
+
+      <!-- Mosaic layout: the "feature" photo is the large tile. Captions show on hover and in the photo viewer. -->
+      <h3 class="sub">In the field</h3>
+      <div class="mosaic mosaic-field">
+        <figure class="feature"><img src="assets/img/field-02.jpg" alt="Ameyassh in the field with slug monitoring nodes and a weather monitoring unit" loading="lazy" width="1200" height="1600" style="object-position: center 80%"><figcaption>Setting up slug monitoring nodes and a weather monitoring unit, Oct 2026</figcaption></figure>
+        <figure><img src="assets/img/field-01.jpg" alt="Slug monitoring camera nodes in a grass seed field" loading="lazy" width="1600" height="1200"><figcaption>Slug monitoring camera nodes in a Willamette Valley grass seed field, Oct 2026</figcaption></figure>
+        <figure><img src="assets/img/field-03.jpg" alt="Weather monitoring unit with anemometer and wind vane in a field" loading="lazy" width="1200" height="1600" style="object-position: center 25%"><figcaption>Weather monitoring unit with anemometer and wind vane, Oct 2026</figcaption></figure>
+        <figure><img src="assets/img/field-04.jpg" alt="Ameyassh walking behind a farm-ng robot in a foggy field" loading="lazy" width="1200" height="1600" style="object-position: center 70%"><figcaption>Testing image stitching on a farm-ng robot with an NVIDIA Jetson and an e-con Systems camera</figcaption></figure>
+        <figure><img src="assets/img/field-05.jpg" alt="Ameyassh standing next to a row of slug monitoring camera nodes in a tilled field" loading="lazy" width="1200" height="1600" style="object-position: center 70%"><figcaption>Checking a row of slug monitoring camera nodes in a grass seed field</figcaption></figure>
+      </div>
+
+      <h3 class="sub">Talks &amp; outreach</h3>
+      <div class="mosaic mosaic-talks">
+        <figure class="feature"><img src="assets/img/talk-hyslop-farm-day.jpg" alt="Ameyassh and teammates presenting a seed sorting system under a tent at Hyslop Farm Day" loading="lazy" width="1600" height="901"><figcaption>Presenting the seed sorting and identification system at Hyslop Farm Day, Albany, OR</figcaption></figure>
+        <figure><img src="assets/img/talk-seed-ai-poster-2025.jpg" alt="Ameyassh next to the poster AI-Assisted Identification of Grass Seeds in a Portable Lightbox" loading="lazy" width="856" height="860" style="object-position: center 40%"><figcaption>Introducing the Seed AI system, Albany, Oregon, Jan 2025</figcaption></figure>
+        <figure><img src="assets/img/conf-asabe-2025.jpg" alt="Ameyassh in front of the ASABE backdrop at the 2025 Annual International Meeting" loading="lazy" width="1600" height="569"><figcaption>ASABE Annual International Meeting, Toronto, Jul 2025</figcaption></figure>
+      </div>
+
+      <h3 class="sub">Milestones</h3>
+      <div class="mosaic mosaic-milestones">
+        <figure><img src="assets/img/milestone-ms-commencement.jpg" alt="Ameyassh shaking hands on stage at his master's commencement at Oregon State University" loading="lazy" width="1600" height="900"><figcaption>Master's commencement, Oregon State University</figcaption></figure>
+        <figure><img src="assets/img/milestone-scholarship-board.jpg" alt="Scholarship recipient board for Ameyassh Nagarajan, William Kent Wiley Jr. Memorial Research Scholarship" loading="lazy" width="768" height="960"><figcaption>Kent Wiley Memorial Scholarship recipient, Oregon Seed Association</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="dated">
+        <li><span class="date">2024 – now</span><span><strong>Graduate Research Assistant</strong>, Oregon State University. Edge computer vision for crop monitoring and pest management.</span></li>
+        <li><span class="date">Spring 2025</span><span><strong>Teaching Assistant, Precision Agriculture</strong>, Oregon State University. Lectures on image processing and machine learning, plus 3 labs and interactive Jupyter notebooks on deep learning basics.</span></li>
+        <li><span class="date">Summer 2023</span><span><strong>Machine Learning Instructor</strong>, iD Tech Camps, University of Washington. Taught Python and machine learning with TensorFlow, including CNNs and RNNs.</span></li>
+        <li><span class="date">2021 – 2022</span><span><strong>Undergraduate Research Assistant</strong>, SIES Graduate School of Technology, Mumbai. NLP-based draft recommendation for DOTA 2 using CBOW and LSTM models.</span></li>
+        <li><span class="date">Summer 2021</span><span><strong>Data Science Intern</strong>, TATA Memorial Centre, Mumbai. Automated feature selection and dataset processing for cancer research.</span></li>
+      </ul>
+
+      <h3 class="sub">Mentoring</h3>
+      <ul class="dated">
+        <li><span class="date">2026 – now</span><span>Ajay Krishna Alawarswamy, Master's student</span></li>
+        <li><span class="date">2025 – 2026</span><span>Henry Dalrymple, undergraduate student, next at Starlink, SpaceX</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="dated">
+        <li><span class="date">2022 – 2028</span><span><strong>Ph.D. &amp; M.Eng., Artificial Intelligence and Crop Science</strong>, Oregon State University (expected Dec 2028)</span></li>
+        <li><span class="date">2018 – 2022</span><span><strong>B.E., Information Technology</strong>, University of Mumbai</span></li>
+      </ul>
+
+      <h3 class="sub">Awards</h3>
+      <ul class="dated">
+        <li><span class="date">2025</span><span>Kent Wiley Memorial Scholarship, Oregon Seed Association</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ OUTSIDE THE LAB ============ -->
+    <section id="outside">
+      <h2>Outside the lab</h2>
+      <p>
+        When I'm not in the lab or out in the field, I make music, usually experimental and always for fun,
+        and I spend as much time outdoors as I can. You can listen on
+        <a href="https://soundcloud.com/amehmusic">SoundCloud</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div class="footer">
+      <p>
+        <a href="mailto:ameyass@oregonstate.edu">ameyass@oregonstate.edu</a> ·
+        <a href="https://github.com/ameyasshn7">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/ameyasshn7/">LinkedIn</a>
+      </p>
+      <p class="muted">Last updated October 2026</p>
     </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Ameyassh Nagarajan. All Rights Reserved.</p>
-    </footer>
+  <!-- Photo viewer: click a photo to open it, then use the arrows, ← / → keys or swipe to browse -->
+  <dialog id="viewer" aria-label="Photo viewer">
+    <button class="close" type="button" aria-label="Close">×</button>
+    <button class="nav prev" type="button" aria-label="Previous photo">‹</button>
+    <button class="nav next" type="button" aria-label="Next photo">›</button>
+    <figure class="viewer-figure">
+      <img class="viewer-img" alt="">
+      <figcaption class="viewer-meta">
+        <span class="viewer-caption"></span>
+        <span class="viewer-bar">
+          <span class="viewer-count"></span>
+          <button class="play" type="button" aria-pressed="false">Play slideshow</button>
+        </span>
+      </figcaption>
+    </figure>
+  </dialog>
 
-    <!-- Particles.js library -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

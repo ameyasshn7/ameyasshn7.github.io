@@ -1,167 +1,117 @@
-// Smooth scrolling for navigation links
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('nav a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetSection.offsetTop - 70, // Offset for the sticky navigation
-                behavior: 'smooth'
-            });
-        });
-    });
+// Photo viewer
+// - Click any gallery photo to open it, then browse with the arrows,
+//   the ← / → keys, or by swiping on a phone.
+// - "Play slideshow" (next to the Gallery heading, or inside the viewer)
+//   steps through every gallery photo automatically.
+// - Research photos open the same way and browse among themselves.
+document.addEventListener('DOMContentLoaded', () => {
+  const viewer = document.getElementById('viewer');
+  if (!viewer || typeof viewer.showModal !== 'function') return;
 
-    // Add active class to nav items on scroll
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        const scrollPosition = window.scrollY + 100; // Offset for better active state timing
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('active');
-            } else {
-                document.querySelector(`nav a[href="#${sectionId}"]`).classList.remove('active');
-            }
-        });
-    });
+  const big = viewer.querySelector('.viewer-img');
+  const caption = viewer.querySelector('.viewer-caption');
+  const counter = viewer.querySelector('.viewer-count');
+  const prevBtn = viewer.querySelector('.prev');
+  const nextBtn = viewer.querySelector('.next');
+  const playBtn = viewer.querySelector('.play');
+  const SLIDE_MS = 4000;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Add back-to-top button
-    const backToTopBtn = document.createElement('button');
-    backToTopBtn.id = 'back-to-top';
-    backToTopBtn.innerHTML = '&uarr;';
-    document.body.appendChild(backToTopBtn);
-    
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Show/hide back-to-top button based on scroll position
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
+  let items = [];   // [{ src, alt, caption }]
+  let index = 0;
+  let timer = null;
 
-    // Initialize particles.js
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#3498db"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.3,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#3498db",
-                    "opacity": 0.2,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 0.8
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
+  const toItem = (img) => {
+    const fig = img.closest('figure');
+    const cap = fig ? fig.querySelector('figcaption') : null;
+    return { src: img.currentSrc || img.src, alt: img.alt, caption: cap ? cap.textContent.trim() : img.alt };
+  };
+
+  const galleryImgs = [...document.querySelectorAll('#gallery figure img')];
+  const researchImgs = [...document.querySelectorAll('.project img')];
+
+  function show(i) {
+    index = (i + items.length) % items.length;
+    const it = items[index];
+    if (!reduceMotion) {
+      big.classList.remove('fade');
+      void big.offsetWidth;          // restart the fade-in
+      big.classList.add('fade');
     }
+    big.src = it.src;
+    big.alt = it.alt;
+    caption.textContent = it.caption;
+    counter.textContent = items.length > 1 ? `${index + 1} / ${items.length}` : '';
+    // load the neighbours ahead of time so browsing feels instant
+    [index + 1, index - 1].forEach((n) => {
+      const pre = new Image();
+      pre.src = items[(n + items.length) % items.length].src;
+    });
+  }
+
+  function open(list, start, autoplay = false) {
+    items = list.map(toItem);
+    const multi = items.length > 1;
+    prevBtn.hidden = nextBtn.hidden = playBtn.hidden = !multi;
+    show(start);
+    if (!viewer.open) viewer.showModal();
+    autoplay && multi ? play() : pause();
+  }
+
+  function play() {
+    pause();
+    timer = setInterval(() => show(index + 1), SLIDE_MS);
+    playBtn.textContent = 'Pause';
+    playBtn.setAttribute('aria-pressed', 'true');
+  }
+  function pause() {
+    clearInterval(timer);
+    timer = null;
+    playBtn.textContent = 'Play slideshow';
+    playBtn.setAttribute('aria-pressed', 'false');
+  }
+  const step = (d) => { show(index + d); if (timer) play(); }; // manual step restarts the timer
+
+  galleryImgs.forEach((img, i) => img.addEventListener('click', () => open(galleryImgs, i)));
+  researchImgs.forEach((img, i) => img.addEventListener('click', () => open(researchImgs, i)));
+
+  // photos can also be opened from the keyboard (Tab to a photo, then Enter)
+  [...galleryImgs, ...researchImgs].forEach((img) => {
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); img.click(); }
+    });
+  });
+
+  const startBtn = document.getElementById('slideshow-btn');
+  if (startBtn && galleryImgs.length) startBtn.addEventListener('click', () => open(galleryImgs, 0, true));
+
+  prevBtn.addEventListener('click', () => step(-1));
+  nextBtn.addEventListener('click', () => step(1));
+  playBtn.addEventListener('click', () => (timer ? pause() : play()));
+  viewer.querySelector('.close').addEventListener('click', () => viewer.close());
+
+  // click on the dark backdrop closes; clicks on the photo or buttons don't
+  viewer.addEventListener('click', (e) => {
+    if (e.target === viewer || e.target.classList.contains('viewer-figure')) viewer.close();
+  });
+  viewer.addEventListener('close', pause);
+
+  document.addEventListener('keydown', (e) => {
+    if (!viewer.open || items.length < 2) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+    else if (e.key === ' ') { e.preventDefault(); timer ? pause() : play(); }
+  });
+
+  // swipe left / right on touch screens
+  let startX = null;
+  viewer.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  viewer.addEventListener('touchend', (e) => {
+    if (startX === null || items.length < 2) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+    startX = null;
+  });
 });
